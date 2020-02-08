@@ -19,7 +19,9 @@ body {
 	margin: 15px 25px;
 	font-family: Helvetica, Arial, sans-serif;
 }
-p { margin: 0 }
+p {
+	margin: 0 
+}
 input {
 	margin-bottom: 1em;
 }
@@ -33,4 +35,11 @@ input {
 	background-color: #cfc;
 	padding: 5px;
 	margin: 10px 0;
+}
+.field_with_errors {
+	color: red;
+	background: transparent;
+}
+.field_with_errors input {
+	border: thin solid red;
 }
