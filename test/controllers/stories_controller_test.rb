@@ -29,5 +29,17 @@ class StoriesControllerTest < ActionDispatch::IntegrationTest
         }
       }
     end
+    assert_redirected_to stories_path
+    assert_not_nil flash[:notice]
+  end
+
+  test 'rejects when missing story attribute' do
+    assert_no_difference 'Story.count' do
+      post stories_path, params: {
+        story: {
+          name: 'story without a link'
+        }
+      }
+    end
   end
 end
