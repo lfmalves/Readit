@@ -8,7 +8,7 @@
 	<%= link_to @story.link, @story.link %>
 </p>
 <div id="vote_form">
-	<%= form_tag story_votes_path(@story), remote: true do %>
-		<%= submit_tag 'Vote for it' %>
+	<%= form_for [ @story, Vote.new ], remote: true do %>
+		<%= f.submit 'Vote for it' %>
 	<% end %>
 </div>
