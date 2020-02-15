@@ -15,7 +15,7 @@
 	<%= link_to @story.link, @story.link %>
 </p>
 <div id="vote_form">
-	<%= form_for [ @story, Vote.new ], remote: true do %>
+	<%= form_for [ @story, Vote.new ], remote: true do |f| %>
 		<%= f.submit 'Vote for it' %>
 	<% end %>
 </div>
