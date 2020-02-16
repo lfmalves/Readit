@@ -8,7 +8,7 @@
 	<% if @story.votes.empty? %>
 		<em>No votes yet!</em>
 	<% else %>
-		<%= render partial: 'votes/vote', collection: @story.votes %>
+		<%= render partial: 'votes/vote', collection: @story.votes.latest %>
 	<% end %>
 </ul>
 <p>
