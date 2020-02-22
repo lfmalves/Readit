@@ -3,6 +3,12 @@
 require 'test_helper'
 
 class StoriesControllerTest < ActionDispatch::IntegrationTest
+  test 'show story' do
+    get story_path(stories(:one))
+    assert_response :sucess
+    assert response.body.include?(stories(:one).name)
+  end
+
   test 'should get index' do
     get stories_url
     assert_response :success
