@@ -7,5 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_column :stories, :user_id, :integer
+    add_column :votes, :user_id, :integer
   end
 end
