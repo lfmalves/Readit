@@ -5,7 +5,7 @@ require 'test_helper'
 class StoriesControllerTest < ActionDispatch::IntegrationTest
   test 'show story' do
     get story_path(stories(:one))
-    assert_response :sucess
+    assert_response :success
     assert response.body.include?(stories(:one).name)
   end
 
