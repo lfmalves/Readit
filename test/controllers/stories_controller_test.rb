@@ -9,6 +9,13 @@ class StoriesControllerTest < ActionDispatch::IntegrationTest
     assert response.body.include?(stories(:one).name)
   end
 
+  test 'show story vote elements' do
+    get story_path(stories(:one))
+    assert_select 'h2 span#vote_score'
+    assert_select 'ul#vote_history li', count: 2
+    assert_select 'div#vote_form form'
+  end
+
   test 'should get index' do
     get stories_url
     assert_response :success
